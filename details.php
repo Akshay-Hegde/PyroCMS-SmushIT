@@ -8,10 +8,12 @@ class Module_Smushit extends Module
 	{
 		return array(
 			'name' => array(
-				'it' => "SmushIt"
+				'it' => "SmushIt",
+				'en' => "SmushIt"
 			),
 			'description' => array(
-				'it' => "Permette di rimpicciolire il peso delle immagini senza perdere la qualità sfruttando il servizio SmushIt"
+				'it' => "Permette di rimpicciolire il peso delle immagini senza perdere la qualità sfruttando il servizio SmushIt",
+				'en' => "Allow users to reduce images size using Yahoo online service smushit"
 			),
 			'author' => "Christian Giupponi STILOGO",
 			'frontend' => false,
