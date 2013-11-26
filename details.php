@@ -23,10 +23,13 @@ class Module_Smushit extends Module
 	
 	public function install()
 	{
+		//Load lang
+		$this->lang->load('smushit/smushit');
+		
 		//cURL must be enabled
 		if( ! function_exists('curl_version') )
 		{
-			$this->session->set_flashdata('error', "cURL must be enabled" );
+			$this->session->set_flashdata('error', lang("smushit:install:error:curl") );
 			redirect('admin/addons/');
 			exit;
 		}
@@ -34,22 +37,22 @@ class Module_Smushit extends Module
 		//We need json support
 		if( ! function_exists('json_decode') )
 		{
-			$this->session->set_flashdata('error', "jSON must be enabled");
+			$this->session->set_flashdata('error', lang("smushit:install:error:json") );
 			redirect('admin/addons/');
 			exit;
 		}
 
 		$settings = array(
 			'smushit_option' => array(
-				'title' => 'Abilita SmushIt',
-				'description' => 'Abilitando il servizio tutte le immagini caricate verranno rimpicciolite',
-				'type' => 'select',
-				'default' => '1',
-				'value' => '',
-				'options' => '0=NO|1=SI',
+				'title' 	  => lang('smushit:install:settings:title'),
+				'description' => lang('smushit:install:settings:descr'),
+				'type' 		  => 'select',
+				'default' 	  => '1',
+				'value' 	  => '',
+				'options' 	  => '0='.lang('global:no').'|1='.lang('global:yes'),
 				'is_required' => 1,
-				'is_gui' => 1,
-				'module' => 'smushit',
+				'is_gui' 	  => 1,
+				'module' 	  => 'smushit',
 			),	
 		);
 		
