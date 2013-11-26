@@ -25,4 +25,5 @@ By default smushit will run for every images uploaded via Files module, if you d
 ## How it works?
 
 This module will hook to the Files module just after the image upload using **file_uploaded** event.  
-The event will check if the uploaded file is a valid image checking its extension and if it is in the allowed extension the module will send the image to smushit.com and then download the smushd one if the size is smaller.
+The event will check if the uploaded file is a valid image checking its extension and if it is in the allowed extension the module will send the image to smushit.com and then download the smushd one if the size is smaller.  
+*NB:* Module doesn't work on localhost just because it will send to smushit the file url not the real image, so smushit is not able to get images from your computer.
